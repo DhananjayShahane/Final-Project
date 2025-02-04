@@ -6,7 +6,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   
-  const URL = "http://localhost:4000";
+  const URL = "https://restaurant-backend-5vmn.onrender.com";
 
   const [categoriesList, setCategoriesList] = useState([]);
   const [resturantsList, setResturantsList] = useState([]);
