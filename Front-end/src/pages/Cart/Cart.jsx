@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { FaHome, FaChevronRight } from 'react-icons/fa';
 
 export const deliveryFee = 50;
-const validPromoCode = "New20";
+const validPromoCode = "New50";
 
 const Cart = ({ setShowLogin }) => {
   const {
@@ -30,7 +30,7 @@ const Cart = ({ setShowLogin }) => {
 
   const applyPromoCode = () => {
     if (enteredPromoCode.trim() === "") {
-      alert("Promo code cannot be empty");
+      toast.success("Promo code cannot be empty.");
       return;
     }
 
@@ -243,6 +243,7 @@ const Cart = ({ setShowLogin }) => {
                   <h4 className="text-lg font-semibold text-default-800">Coupon Code</h4>
                 </div>
                 <div className="p-6">
+                  <p className="text-gray-600 mb-3 text-center text-sm">Enter Code : New50</p>
                   <div className="relative max-w-full">
                     <div className="relative max-w-full">
                       <input placeholder="Enter Coupon Code"

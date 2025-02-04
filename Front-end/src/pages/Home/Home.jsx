@@ -34,7 +34,7 @@ const Home = () => {
       {/* Hero Section */}
 
       {/* Food Section */}
-      <section className="md:my-20 my-10 max-w-7xl mx-auto px-4" id="menu">
+      <section className="md:my-20 my-10 max-w-7xl mx-auto px-4 min-h-96" id="menu">
         <div className="lg:flex w-full md:mt-6 mt-2 gap-10">
           {/* Filter Section */}
           <ExploreMenu 
@@ -59,14 +59,13 @@ const Home = () => {
             </div>
 
             {/* Filter Section Popup */}
-            {isFilterPopupOpen && (
+            {/* {isFilterPopupOpen && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
                 <div className="bg-white p-6 rounded-lg max-w-md w-full">
-                  {/* Passing the setFilters function to handle the filter changes */}
                   <FilterSection onFilterChange={setFilters} closePopup={closePopup} />
                 </div>
               </div>
-            )}
+            )} */}
 
             {/* Food Section */}
             <FoodDisplay category={category} filters={filters} />

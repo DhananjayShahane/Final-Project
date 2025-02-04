@@ -1,5 +1,6 @@
 import { CircleCheckBig } from 'lucide-react';
-import FoodImage from "../../assets/food_2.png"
+import BannerImg_1 from "../../assets/banner_img_1.jpg"
+import BannerImg_2 from "../../assets/banner_img_2.jpg"
 
 export default function FoodFeatures() {
   const features = [
@@ -11,7 +12,7 @@ export default function FoodFeatures() {
   ]
 
   return (
-    <div className="py-12" id='features'>
+    <div className="py-12 my-10 px-4" id='features'>
       <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-8">
         {/* Left Content */}
         <div className="space-y-6">
@@ -42,10 +43,18 @@ export default function FoodFeatures() {
 
         {/* Right Images */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="rounded-2xl overflow-hidden h-full w-full object-cover" style={{ backgroundImage: `url(${FoodImage})` }}>
+          <div className="rounded-2xl w-full bg-cover bg-center bg-no-repeat p-0" style={{
+            backgroundImage: `url(${BannerImg_1})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}>
 
           </div>
-          <div className="rounded-2xl overflow-hidden h-full w-full object-cover" style={{ backgroundImage: `url(${FoodImage})` }}>
+          <div className="rounded-2xl w-full bg-cover bg-center bg-no-repeat p-0" style={{
+            backgroundImage: `url(${BannerImg_2})` ,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}>
 
           </div>
         </div>

@@ -1,6 +1,5 @@
-import React, { useRef, useContext, useState } from "react";
+import React, { useRef, useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
-import SkeletonCategory from "../Skeleton/SkeletonCategory";
 
 const ExploreMenu = ({ category, setCategory }) => {
   const { URL, categoriesList } = useContext(StoreContext);
@@ -13,15 +12,12 @@ const ExploreMenu = ({ category, setCategory }) => {
           ref={scrollRef}
           className="custom-scroll w-full overflow-x-auto lg:overflow-y-auto flex lg:flex-col space-x-4 lg:space-x-0 lg:space-y-2 p-2"
         >
-          {/* Category Heading */}
           <h2 className="text-xl font-semibold mb-4">
             {category === "All" ? "Explore Categories" : category}
           </h2>
 
-          {/* Categories List */}
           {categoriesList ? (
             <nav className="flex flex-row lg:flex-col gap-2 mb-6" aria-label="Category Tabs">
-              {/* View All Button */}
               <button
                 onClick={() => setCategory("All")}
                 className={`flex items-center gap-3 p-3 rounded-lg transition duration-300 min-w-[150px] lg:min-w-full
@@ -30,10 +26,8 @@ const ExploreMenu = ({ category, setCategory }) => {
                 <p className="text-md font-medium">View All</p>
               </button>
 
-              {/* Dynamic Categories */}
               {categoriesList.map((item) => {
                 const isActive = category === item.name;
-
                 return (
                   <button
                     key={item.name}
@@ -52,7 +46,18 @@ const ExploreMenu = ({ category, setCategory }) => {
               })}
             </nav>
           ) : (
-            <SkeletonCategory />
+            <div className="flex flex-row lg:flex-col gap-2 mb-6 animate-pulse">
+              {/* View All Skeleton */}
+              <div className="flex items-center gap-3 p-3 rounded-lg bg-gray-200 min-w-[150px] lg:min-w-full h-14"></div>
+
+              {/* Category Skeletons */}
+              {[...Array(5)].map((_, index) => (
+                <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-gray-200 min-w-[150px] lg:min-w-full h-14">
+                  <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                  <div className="h-4 bg-gray-400 rounded w-1/2"></div>
+                </div>
+              ))}
+            </div>
           )}
         </div>
       </div>
@@ -60,4 +65,4 @@ const ExploreMenu = ({ category, setCategory }) => {
   );
 };
 
-export default ExploreMenu
+export default ExploreMenu;

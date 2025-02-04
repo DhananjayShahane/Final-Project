@@ -1,5 +1,6 @@
 import { FaStar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const testimonials = [
   {
@@ -27,6 +28,7 @@ const testimonials = [
 
 
 const TestimonialSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const sectionStyle = {
     backgroundImage: 'url(https://restaurant-io-eta.vercel.app/assets/imgs/BgImg.jpg)',
     backgroundRepeat: 'no-repeat',
@@ -37,7 +39,7 @@ const TestimonialSection = () => {
 
   return (
     <section className="relative my-10" style={sectionStyle}>
-      <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+      <div className={`absolute inset-0 bg-black/60 flex items-center justify-center`}>
         <div className="max-w-7xl mx-auto py-16">
           <h2 className="text-3xl font-semibold text-center mb-4 text-white">What Our Guests Say</h2>
           <p className="text-center text-lg text-gray-300 mb-8 max-w-4xl mx-auto">
@@ -52,7 +54,7 @@ const TestimonialSection = () => {
                 animate={{ opacity: 1, x: 0 }}  // Slide into view
                 exit={{ opacity: 0, x: 100 }}   // Exit animation
                 transition={{ duration: 0.5, delay: index * 0.2 }} // Delay for sequential animations
-                className="flex flex-col bg-white relative rounded-2xl shadow-2xl p-6"
+                className={`flex flex-col bg-white relative rounded-2xl shadow-2xl p-6 ${index === activeIndex ? "block" : "hidden"}`} 
               >
                 <img
                   src={testimonial.image}

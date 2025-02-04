@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import image from "../../assets/interneSVG.svg"
+import BannerImg from "../../assets/banner_img_3.jpeg"
 
 // Define separate validation schemas for sign up and login
 const signUpSchema = Yup.object({
@@ -81,7 +81,7 @@ const LoginPopup = ({ setShowLogin }) => {
         <motion.div
           className="hidden lg:block w-full lg:w-5/12 bg-gray-400 bg-cover rounded-l-lg"
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${BannerImg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

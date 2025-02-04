@@ -51,7 +51,7 @@ const Footer = () => {
           <ul className="space-y-2 text-gray-600">
             <li>121 King St,</li>
             <li>888-123-42278</li>
-            <li>hellotazrin7@gmail.com</li>
+            <li>freshfood@email.com</li>
           </ul>
         </div>
       </div>
